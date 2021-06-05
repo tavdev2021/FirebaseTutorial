@@ -19,35 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
         //Setup
 
-        val bundle = intent.extras
-        val email = bundle?.getString("email")
-        val provider = bundle?.getString("provider")
-        setup (email ?: "", provider ?: "")
-
-
-        //Guardado de datos
-
-        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
-        prefs.putString("email", email)
-        prefs.putString("provider", provider)
-        prefs.apply()
-
-        // Remote Config
-        forzarErrorButton.visibility = View.INVISIBLE
-        Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener {
-            if (task.isSuccessful) {
-                val showErrorButton = Firebase.remoteConfig.getBoolean("show_error_button")
-                val errorButonText = Firebase.remoteConfig.getString("error_button_text")
-
-                if (showErrorButton) {
-                    forzarErrorButton.visibility = View.VISIBLE
-                }
-                forzarErrorButton.text = errorButonText
-
-            }
-        }
-
-        fun setup(email: String, provider: String) {
+        fun setup (email: String, provider: String) {
 
             title = "Inicio / Home"
             emailTextView.text = email
@@ -71,10 +43,19 @@ class HomeActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().signOut()
                 onBackPressed()
             }
-            forzarErrorButton.setOnClickListener {
-                // Forzar Error
-                throw RuntimeException("Forzar Error")
-            }
         }
+
+        val bundle = intent.extras
+        val email = bundle?.getString("email")
+        val provider = bundle?.getString("provider")
+        setup (email ?: "", provider ?: "")
+
+
+        //Guardado de datos
+
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+        prefs.putString("email", email)
+        prefs.putString("provider", provider)
+        prefs.apply()
     }
 }
