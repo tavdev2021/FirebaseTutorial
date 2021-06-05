@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1036918022519",
+    "firebase_url": "https://fir-tutorialtavo2020.firebaseio.com",
+    "project_id": "fir-tutorialtavo2020",
+    "storage_bucket": "fir-tutorialtavo2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036918022519:android:76385e2958b2fb4f814172",
+        "android_client_info": {
+          "package_name": "com.example.firebasetutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036918022519-n61tf319kpa9986u3nfcaaqc65a73j3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuVpB0N0A46SMMHp9P7A3saZsQUyaGQdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036918022519-n61tf319kpa9986u3nfcaaqc65a73j3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
